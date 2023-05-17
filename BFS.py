@@ -1,8 +1,5 @@
 import collections
 
-# this is where the grid method was learned from:
-# turtorial: http://programarcadegames.com/index.php?lang=en&chapter=array_backed_grids
-
 # grid generation:
 height_grid = 5     # This is also set as the zombie speed
 width_grid = 5
@@ -23,7 +20,7 @@ def _new_grid():
 class SEARCH():
     def __init__(self):
         self.goal = "*"
-        self.wall = "0"      # no walls where implemented :(
+        self.wall = "0"     
 
     def return_grid(self, goal):
 
@@ -51,7 +48,7 @@ class SEARCH():
             x, y = path[-1]
 
             if self.grid[y][x] == self.goal:
-                 # convet back into screen cordinates and return
+                 # convert back into screen cordinates and return
                 return list(map(lambda x: (x[0]*width_grid, x[1]*height_grid), path))
 
             for x2, y2 in ((x+1, y), (x-1, y), (x, y+1), (x, y-1)):

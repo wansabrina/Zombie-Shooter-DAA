@@ -10,8 +10,8 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
 # Initialize pygame and open new window
-WIDTH = 800        # heigh and width of the window
-HEIGHT = 800
+WIDTH = 750        # heigh and width of the window
+HEIGHT = 750
 FPS = 30        # updateing frames per second
 
 
@@ -19,7 +19,6 @@ pygame.init()           # initialize pygame
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))          # set size of window + tittle
 pygame.display.set_caption("Zombie Shooter")
-
 
 font_name = pygame.font.match_font('arial')     # chosing font
 
