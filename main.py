@@ -14,14 +14,12 @@ WIDTH = 750        # heigh and width of the window
 HEIGHT = 750
 FPS = 30        # updateing frames per second
 
-
 pygame.init()           # initialize pygame
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))          # set size of window + tittle
 pygame.display.set_caption("Zombie Shooter")
 
 font_name = pygame.font.match_font('arial')     # chosing font
-
 clock = pygame.time.Clock()
 zombies_last_tick = pygame.time.get_ticks()
 spawn_interval = 7000       # Zombies spawn every 7 seconds
@@ -55,8 +53,6 @@ def health_bar(surface, x, y, points):
     fill_rect = pygame.Rect(x, y, fill, bar_height)
     pygame.draw.rect(surface, GREEN, fill_rect)
     pygame.draw.rect(surface, WHITE, outline_rect, 2)
-
-
 
 def draw_text(surf, text, size, x, y):
     font = pygame.font.Font(font_name, size)
@@ -136,14 +132,14 @@ class Player(pygame.sprite.Sprite):
         #Facing Up(8)
         image = sprite_sheet.get_image(7*width, 0, 100, height)
         self.walkingUp.append(image)
+        
+    def position(self):
+        return [self.rect.x, self.rect.y]
 
     def shoot(self):
         bullet = Bullet(self.rect.x, self.rect.centery)
         all_sprites.add(bullet)
         bullets.add(bullet)
-
-    def position(self):
-        return [self.rect.x, self.rect.y]
 
     def update(self):
         # update the image depending on the direction
